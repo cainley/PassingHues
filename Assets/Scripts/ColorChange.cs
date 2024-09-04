@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ColorChange : MonoBehaviour
 {
+    public IntVariable timesTouch;
     [SerializeField] Sprite[] gameSprites;
     [SerializeField] Sprite newSprite;
 
@@ -12,5 +13,9 @@ public class ColorChange : MonoBehaviour
         newSprite = gameSprites[Random.Range(0, gameSprites.Length)];
 
         gameObject.GetComponent<SpriteRenderer>().sprite = newSprite;
+
+        timesTouch.value++;
     }
+
+
 }
